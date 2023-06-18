@@ -1,6 +1,6 @@
 "use strict";
 
-import { readInputFile } from './helpers/fileIOHelper.js';
+import { readInputFile, writeOutputFile } from './helpers/fileIOHelper.js';
 import Game from './classes/game.js';
 
 (() => {
@@ -14,6 +14,10 @@ import Game from './classes/game.js';
     }
 
     const [ _, mapWidth, mapHeight] = lineToInitMap.split('-');
+
     const myGame = new Game(mapWidth, mapHeight, fileLines);
-    console.log(myGame);
+    myGame.startExploringMap();
+    writeOutputFile(myGame);
+
+    console.log('\x1b[32m%s\x1b[0m', 'Map exploring finished ! \u{1F680}');
 })();
