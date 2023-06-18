@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Practical exercise - The treasure map",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/tests/testGame.js"
   },
   "author": "Slimane Achbouq",
   "license": "ISC",
